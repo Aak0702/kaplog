@@ -1,13 +1,15 @@
 package com.example.kapDuty;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-@SpringBootTest
-class KapDutyApplicationTests {
+@EnableScheduling
+@SpringBootApplication
+public class KapDutyApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(KapDutyApplicationTests.class, args);
+    }
 
 }
