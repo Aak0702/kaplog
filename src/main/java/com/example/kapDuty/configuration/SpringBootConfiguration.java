@@ -19,6 +19,7 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
@@ -133,5 +134,10 @@ public class SpringBootConfiguration implements WebMvcConfigurer {
         ConcurrentKafkaListenerContainerFactory<String, ErrorLogDto> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(errorLogConsumerFactory());
         return factory;
+    }
+
+    @Bean
+    RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
